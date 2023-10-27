@@ -1,0 +1,52 @@
+<div *ngIf="activeCall.status !== ECallStatus.OPEN">
+  <div class="header">
+    <img src="assets/images/call_waiter.svg" alt="">
+    <div class="title">
+      Помощь официанта
+    </div>
+    <div class="hint">
+      Нажмите на нужное вам действие
+    </div>
+  </div>
+  <div class="btns">
+    <button class="call" mat-flat-button (click)="call(ECallType.CALL)" [disabled]="buttonLoading">
+<!--      <img src="assets/images/phone.svg" alt="" width="20" height="20">-->
+      <span>Вызвать официанта</span>
+    </button>
+    <button class="call-secondary" mat-flat-button (click)="call(ECallType.PAYMENT_WITH_CARD)" [disabled]="buttonLoading">
+<!--      <img src="assets/images/receipt-tax.svg" alt="" width="20" height="20">-->
+      <span>Оплатить (карта)</span>
+    </button>
+    <button class="call-secondary" mat-flat-button (click)="call(ECallType.CASH_PAYMENT)" [disabled]="buttonLoading">
+<!--      <img src="assets/images/receipt-tax.svg" alt="" width="20" height="20">-->
+      <span>Оплатить (наличные)</span>
+    </button>
+  </div>
+  <button class="close" (click)="closeDialog()">
+    <img src="assets/images/x.svg" alt="x" width="24" height="24">
+  </button>
+</div>
+
+<div *ngIf="activeCall.status === ECallStatus.OPEN">
+    <div class="header">
+      <img src="assets/images/call_waiter.svg" alt="">
+      <div class="title">
+        Вы вызвали официанта <span *ngIf="activeCall.type!==ECallType.CALL">({{ callRU[activeCall.type] }})</span>
+      </div>
+      <div class="hint">
+        Дождитесь когда к вам подойдет официант
+      </div>
+    </div>
+    <div class="btns">
+      <button class="call" mat-flat-button (click)="cancelCall()" [disabled]="buttonLoading">
+<!--        <img src="assets/images/phone.svg" alt="" width="20" height="20">-->
+        <span>Отменить вызов</span>
+      </button>
+    </div>
+    <button class="close" (click)="closeDialog()">
+      <img src="assets/images/x.svg" alt="x" width="24" height="24">
+    </button>
+</div>
+<div class="spinner_back" *ngIf="loading">
+  <mat-spinner [strokeWidth]="5"></mat-spinner>
+</div>

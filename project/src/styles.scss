@@ -1,0 +1,126 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$diploma-frontend-primary: mat.define-palette(mat.$indigo-palette);
+$diploma-frontend-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$diploma-frontend-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$diploma-frontend-theme: mat.define-light-theme((
+  color: (
+    primary: $diploma-frontend-primary,
+    accent: $diploma-frontend-accent,
+    warn: $diploma-frontend-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($diploma-frontend-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:focus{
+  box-sizing: border-box;
+  border: 1px solid #F46F49;
+}
+
+.wv-container{
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.web-container{
+  width: 100%;
+  position: relative;
+  padding: 0 50px;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+
+.custom-dialog .mat-dialog-container{
+  padding: 30px 50px !important;
+  position: relative;
+}
+
+button.primary-btn{
+  border: 1px solid #F46F49;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background-color: white;
+  color: #F46F49;
+  padding: 6px 25px;
+  transition: background-color linear .1s;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #F46F49;
+}
+
+
+@media (max-width: 500px) {
+  .web-container {
+    padding: 0 20px;
+  }
+
+
+  button.primary-btn {
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,63 @@
+<div class="header">
+  <div class="title">
+    Вызов
+  </div>
+<!--  <div class="hint">-->
+<!--    Нажмите на нужное вам действие-->
+<!--  </div>-->
+</div>
+<div class="content">
+  <div class="item">
+    <div class="key">
+      № стола:
+    </div>
+    <div class="value">
+      {{data.table}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="key">
+      Время вызова:
+    </div>
+    <div class="value">
+      {{data.created | date : 'dd.mm.yyyy, HH:mm'}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="key">
+      Клиент:
+    </div>
+    <div class="value">
+      {{data.client}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="key">
+      Тип:
+    </div>
+    <div class="value">
+      {{callRU[data.type]}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="key">
+      Статус:
+    </div>
+    <div class="value"
+         [class.accept]="data.status === ECallStatus.OPEN"
+         [class.warning]="data.status === ECallStatus.CANCELLED"
+         [class.secondary]="data.status === ECallStatus.CLOSED">
+      {{callStatusRU[data.status]}}
+    </div>
+  </div>
+</div>
+<div class="btns" *ngIf="data.status === ECallStatus.OPEN">
+  <button class="call" mat-flat-button (click)="closeCall()" [disabled]="buttonLoading">
+    <!--      <img src="assets/images/phone.svg" alt="" width="20" height="20">-->
+    <span>Закрыть вызов</span>
+  </button>
+</div>
+<button class="close" (click)="closeDialog()">
+  <img src="assets/images/x.svg" alt="x" width="24" height="24">
+</button>
+

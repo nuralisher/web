@@ -1,0 +1,38 @@
+<div *ngIf="menu.length === 0" class="empty-list">
+  <div class="empty-list-inner">
+    <img src="assets/images/empty-list.svg" alt="">
+    <div class="empty-list-title">
+      На данный момент в меню нет блюд
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="item" *ngFor="let menuItem of menu" [routerLink]="'/menu/' + menuItem.id">
+    <div class="left">
+      <div class="item_img" [style.background-image]="'url(' + menuItem.image + ')'"></div>
+    </div>
+    <div class="right">
+      <div class="item-title">
+        {{menuItem.name}}
+      </div>
+      <div class="item-description">
+        {{menuItem.description}}
+      </div>
+      <div class="item-footer">
+        <div>
+          {{menuItem.price.toLocaleString()}} ₸
+        </div>
+        <div class="right-footer">
+          <div class="add_btn" *ngIf="getQuantity(menuItem)">
+            {{getQuantity(menuItem)}}
+          </div>
+<!--          <button class="decrement" (click)="changeQuantity(-1, order)">-</button>-->
+<!--          <div class="quantity">-->
+<!--            {{order.quantity}}-->
+<!--          </div>-->
+<!--          <button class="increment" [disabled]="order.quantity >= 20" (click)="changeQuantity(1, order)">+</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

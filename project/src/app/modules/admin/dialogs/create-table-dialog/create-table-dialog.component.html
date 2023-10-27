@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="title">
+    Добавление стола
+  </div>
+  <form class="form" [formGroup]="form" >
+    <div class="field">
+      <label class="label">Номер</label>
+      <input
+        matInput
+        type="number"
+        inputmode="numeric"
+        formControlName="number"
+        [autofocus]="false"
+        placeholder="Введите номер"
+      >
+      <mat-error style="display: block" *ngIf="form.get('number')?.invalid && form.get('number')?.touched">Это обязательное поле </mat-error>
+    </div>
+    <div class="btns">
+      <button mat-flat-button mat-dialog-close class="cancel-button" type="reset">
+        Отмена
+      </button>
+      <button [disabled]="loading || form.invalid" mat-flat-button class="submit-button" type="submit" (click)="onSubmit()">
+        Добавить
+      </button>
+    </div>
+  </form>
+</div>
+<mat-icon mat-dialog-close class="close-btn">close</mat-icon>

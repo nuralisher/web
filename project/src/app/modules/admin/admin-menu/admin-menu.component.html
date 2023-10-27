@@ -1,0 +1,76 @@
+<div class="web-container" style="height: 100%; display: flex; flex-direction: column; padding-top: 30px; padding-bottom: 30px">
+  <div class="header">
+    <div class="title">
+      Блюда
+    </div>
+    <div class="search">
+      <div class="icon">
+        <img src="assets/images/search_gray.svg" alt="" width="24" height="24">
+      </div>
+      <input placeholder="Поиск" type="text" matInput>
+    </div>
+    <div class="header-right">
+      <button class="add-btn" routerLink="/admin/menu/form">
+        + Добавить
+      </button>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="primary-btn" mat-flat-button (click)="openAddDialog()">
+      + Добавить категорию
+    </button>
+    <div class="tab" [class.active-tab]="selectedCategoryId==='ALL'" (click)="selectCategory('ALL')">
+      Все
+    </div>
+    <div class="tab"
+         *ngFor="let category of categories"
+         (click)="selectCategory(category.id)"
+         [class.active-tab]="selectedCategoryId===category.id"
+    >
+      <div>
+        {{category.name}}
+      </div>
+      <img (click)="removeCategory(category.id)" class="remove-btn" src="assets/images/x-circle.svg" alt="x">
+    </div>
+  </div>
+  <div class="content">
+    <div class="empty" *ngIf="menus.length === 0">
+      <div class="empty-message">
+        <img src="assets/images/empty_food.svg" alt="">
+        <div class="emtpy-message-title">У вас нет блюд</div>
+        <div class="emtpy-btns">
+          <button class="add-btn" routerLink="/admin/menu/form">
+            + Добавить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <mat-table *ngIf="menus.length" [dataSource]="menus" class="table">
+      <ng-container *ngFor="let column of columns" [matColumnDef]="column.name">
+        <th mat-header-cell *matHeaderCellDef sticky [class.flex-2]="column.name!=='image'">
+          {{column.title}}
+        </th>
+        <ng-container *ngIf="column.name==='image'">
+          <td mat-cell *matCellDef="let element">
+            <img [src]="element[column.name]" alt="" width="50" height="50">
+          </td>
+        </ng-container>
+        <ng-container *ngIf="column.name!=='image'">
+          <td mat-cell *matCellDef="let element" [class.flex-2]="column.name!=='image'">
+            {{element[column.name]}}
+          </td>
+        </ng-container>
+      </ng-container>
+      <ng-container [matColumnDef]="'action'">
+        <th mat-header-cell *matHeaderCellDef sticky></th>
+        <td mat-cell *matCellDef="let element" class="action-row">
+          <img class="image-btn edit-btn" src="assets/images/pencil.svg" alt="">
+          <img class="image-btn" src="assets/images/trash.svg" alt="" (click)="deleteMenu(element.id)">
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+    </mat-table>
+  </div>
+</div>

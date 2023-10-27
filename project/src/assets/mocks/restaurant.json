@@ -1,0 +1,32 @@
+{
+  "id": 1,
+  "name": "Restaurant",
+  "position": "OWNER",
+  "menu_categories": [
+    {
+      "id": 1,
+      "name": "Категория",
+      "menu_categories": [1, 2, 3, 4, 5],
+      "tables": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 2,
+      "name": "Категория",
+      "menu_categories": [1, 2, 3, 4, 5],
+      "tables": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 3,
+      "name": "Категория",
+      "menu_categories": [1, 2, 3, 4, 5],
+      "tables": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 4,
+      "name": "Категория",
+      "menu_categories": [1, 2, 3, 4, 5],
+      "tables": [1, 2, 3, 4, 5]
+    }
+  ],
+  "tables": [1, 2, 3, 4, 5],
+}

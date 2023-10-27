@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "Restaurant 12",
+    "position": "OWNER",
+    "menu_categories": [
+      {
+        "id": 1,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 2,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 3,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 4,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      }
+    ],
+    "tables": [1, 2, 3, 4, 5]
+  },
+  {
+    "id": 14,
+    "name": "Restaurant 21",
+    "position": "OWNER",
+    "menu_categories": [
+      {
+        "id": 1,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 2,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 3,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 4,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      }
+    ],
+    "tables": [1, 2, 3, 4, 5]
+  },
+  {
+    "id": 13,
+    "position": "OWNER",
+    "name": "Restaurant 15",
+    "menu_categories": [
+      {
+        "id": 1,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 2,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 3,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 4,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      }
+    ],
+    "tables": [1, 2, 3, 4, 5]
+  },
+  {
+    "id": 12,
+    "position": "WAITER",
+    "name": "Restaurant 1",
+    "menu_categories": [
+      {
+        "id": 1,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 2,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 3,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      },
+      {
+        "id": 4,
+        "name": "Категория",
+        "menu_categories": [1, 2, 3, 4, 5],
+        "tables": [1, 2, 3, 4, 5]
+      }
+    ],
+    "tables": [1, 2, 3, 4, 5]
+  }
+]

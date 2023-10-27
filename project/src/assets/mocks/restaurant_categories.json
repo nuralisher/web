@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Category",
+    "restaurant": "Restaurant",
+    "menus": [1, 2, 3, 4]
+  },
+  {
+    "id": 2,
+    "name": "Category 2",
+    "restaurant": "Restaurant",
+    "menus": [1, 2, 3, 4]
+  },
+  {
+    "id": 3,
+    "name": "Category 3",
+    "restaurant": "Restaurant",
+    "menus": [1, 2, 3, 4]
+  }
+]

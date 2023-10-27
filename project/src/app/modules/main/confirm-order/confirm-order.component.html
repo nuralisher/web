@@ -1,0 +1,67 @@
+<div class="wv-container confirm-container">
+  <div class="content">
+    <div class="header">
+      <img src="assets/images/chevron-left-big.svg" alt="<" class="back" routerLink="/menu">
+      Мой заказ
+    </div>
+    <div class="list">
+      <div class="item" *ngFor="let order of mainService.orderItems">
+        <div class="item-left">
+          <div class="item-title">
+            {{order.name}}
+          </div>
+          <div class="description">
+            {{order.price.toLocaleString()}} ₸
+          </div>
+        </div>
+        <div class="right">
+          <button class="decrement" (click)="changeQuantity(-1, order)">-</button>
+          <div class="quantity">
+            {{order.quantity}}
+          </div>
+          <button class="increment" [disabled]="order.quantity >= 20" (click)="changeQuantity(1, order)">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="comment">
+      <div class="comment-title">
+        Есть комментарии?
+      </div>
+      <div class="comment-hint">
+        Особые пожелания к шефу, аллергии, диетические ограничения и т.д.
+      </div>
+      <textarea
+        [(ngModel)]="comment"
+        rows="1"
+        type="text"
+        placeholder="Напишите комментарий"
+        resize="false"
+      ></textarea>
+    </div>
+    <div class="footer">
+      <div class="footer-description">
+        <div class="key">Сумма</div>
+        <div class="value">
+          {{mainService.totalCost.toLocaleString()}} ₸
+        </div>
+      </div>
+      <div class="footer-description">
+        <div class="key">Обслуживание</div>
+        <div class="value">
+          0%
+        </div>
+      </div>
+      <div class="footer-title">
+        <div class="key">Общая сумма</div>
+        <div class="value">
+          {{mainService.totalCost.toLocaleString()}} ₸
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btns">
+    <button mat-flat-button [disabled]="loading" class="add" (click)="confirmOrder()">
+      Подтвердить заказ
+    </button>
+  </div>
+</div>

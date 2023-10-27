@@ -1,0 +1,90 @@
+<div class="wrapper">
+  <form class="form" [formGroup]="form" (submit)="onSubmit()">
+    <div class="form_inner">
+      <div class="title">
+        Регистрация
+      </div>
+      <div class="field">
+        <label class="label">Фамилия</label>
+        <input
+          matInput
+          type="text"
+          inputmode="text"
+          formControlName="last_name"
+          placeholder="Введите фамилию"
+        >
+        <mat-error *ngIf="form.get('last_name')?.invalid && form.get('last_name')?.touched">Это обязательное поле </mat-error>
+      </div>
+      <div class="field">
+        <label class="label">Имя</label>
+        <input
+          matInput
+          type="text"
+          inputmode="text"
+          formControlName="first_name"
+          placeholder="Введите имя"
+        >
+        <mat-error *ngIf="form.get('first_name')?.invalid && form.get('first_name')?.touched">Это обязательное поле </mat-error>
+      </div>
+      <div class="field">
+        <label class="label">Имя пользователя</label>
+        <input
+          matInput
+          type="text"
+          formControlName="username"
+          placeholder="Введите имя пользователя"
+        >
+        <mat-error *ngIf="form.get('username')?.invalid && form.get('username')?.touched">Это обязательное поле </mat-error>
+      </div>
+      <div class="field">
+        <label class="label">E-mail</label>
+        <input
+          matInput
+          type="email"
+          inputmode="email"
+          formControlName="email"
+          placeholder="Введите e-mail"
+        >
+        <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Неверный адрес электронной почты</mat-error>
+      </div>
+      <div class="field">
+        <label class="label">Пароль</label>
+        <input
+          matInput
+          type="password"
+          formControlName="password1"
+          placeholder="Введите пароль"
+          (input)="onConfirmPassword()"
+        >
+        <mat-error *ngIf="form.get('password1')?.invalid && form.get('password1')?.touched">Пароль должен содержать минимуи 8 символов</mat-error>
+      </div>
+      <div class="field">
+        <label class="label">Повторите пароль</label>
+        <input
+          matInput
+          type="password"
+          formControlName="password2"
+          placeholder="Введите пароль еще раз"
+          (input)="onConfirmPassword()"
+        >
+        <mat-error *ngIf="passwordConfirmError">Пароли не совпадают</mat-error>
+      </div>
+      <div class="form-hint">
+        <div>
+          Уже есть аккаунт? <a [routerLink]="['/auth/sign-in', {redirect: 'admin/restaurants'}]">Войти</a>
+        </div>
+        <div>
+          <a [routerLink]="['/auth/sign-up']">Я клиент</a>
+        </div>
+      </div>
+    </div>
+    <mat-error class="form-error" *ngIf="error">
+      Не удалось зарегистрироваться ({{error}})
+    </mat-error>
+    <div class="btns">
+      <button [disabled]="loading" mat-flat-button class="submit-button">
+        Продолжить
+      </button>
+    </div>
+  </form>
+</div>

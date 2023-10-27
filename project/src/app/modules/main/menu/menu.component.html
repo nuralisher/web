@@ -1,0 +1,47 @@
+<div class="wv-container">
+  <div class="wrapper" >
+    <div class="header">
+      <div class="header-title" *ngIf="true">
+        Mojno Menu
+      </div>
+      <div class="header-right">
+        <button class="search-btn">
+          <img src="assets/images/search.svg" alt="search" width="24" height="24">
+        </button>
+        <button *ngIf="!authService.user.id" class="login-btn" routerLink="/auth/sign-in">
+          <img src="assets/images/login.svg" alt="login" width="24" height="24">
+        </button>
+        <button *ngIf="authService.user.id" (click)="showDropdown = !showDropdown; $event.stopPropagation()" class="login-btn">
+          <img src="assets/images/user.svg" alt="login" width="24" height="24">
+        </button>
+        <ng-template [ngIf]="showDropdown">
+          <div class="dropdown logout">
+            <div class="nav" (click)="logout()">
+              <img src="assets/images/logout.svg" alt="">
+              <div class="nav-title">Выйти</div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div class="content" [class.m-50]="mainService.orderItems.length">
+      <mat-tab-group [(selectedIndex)]="mainService.selectedCategoryId">
+        <mat-tab *ngFor="let category of categories" [tabIndex]="category.id" [label]="category.name">
+          <app-menu-list [category]="category"></app-menu-list>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+
+<div class="overlay_wrapper">
+  <div class="btns">
+    <button class="add" *ngIf="mainService.orderItems.length" routerLink="/confirm-order">
+      Заказать ({{mainService.totalCost.toLocaleString()}} ₸)
+    </button>
+  </div>
+</div>
+
+<div class="call-waiter" (click)="openCallDialog()">
+  <img src="assets/images/call_waiter.svg" alt="" width="52" height="52">
+</div>

@@ -1,0 +1,58 @@
+<div class="web-container" style="height: 100%; display: flex; flex-direction: column; padding-top: 30px; padding-bottom: 30px">
+  <div class="header">
+    <div class="title">
+      Столы
+    </div>
+    <div class="search">
+      <div class="icon">
+        <img src="assets/images/search_gray.svg" alt="" width="24" height="24">
+      </div>
+      <input placeholder="Поиск" type="text" matInput>
+    </div>
+    <div class="header-right">
+      <button class="add-btn"(click)="openAddDialog()">
+        + Добавить
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="empty" *ngIf="tables.length === 0">
+      <div class="empty-message">
+        <img src="assets/images/table-empty-list.svg" alt="">
+        <div class="emtpy-message-title">У вас нет столов</div>
+        <div class="emtpy-btns">
+          <button class="add-btn" (click)="openAddDialog()">
+            + Добавить
+          </button>
+        </div>
+      </div>
+    </div>
+    <mat-table *ngIf="tables.length" [dataSource]="tables" class="table">
+      <ng-container *ngFor="let column of columns" [matColumnDef]="column.name">
+        <mat-header-cell  *matHeaderCellDef sticky>
+          {{column.title}}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element ">
+          {{element[column.name]}}
+        </mat-cell>
+      </ng-container>
+      <ng-container [matColumnDef]="'qr'">
+        <mat-header-cell *matHeaderCellDef sticky>Скачать QR код</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a [href]="element.qr_code" target="_blank">
+            <img class="download-btn image-btn" src="assets/images/download.svg" alt="">
+          </a>
+        </mat-cell>
+      </ng-container>
+      <ng-container [matColumnDef]="'action'">
+        <mat-header-cell *matHeaderCellDef sticky></mat-header-cell>
+        <mat-cell *matCellDef="let element" class="action-row">
+          <img class="image-btn edit-btn" src="assets/images/pencil.svg" alt="">
+          <img class="image-btn" src="assets/images/trash.svg" alt="" (click)="deleteTable(element.id)">
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnsToDisplay"></mat-row>
+    </mat-table>
+  </div>
+</div>

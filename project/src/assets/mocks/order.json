@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "table_id": 1,
+  "table": 1,
+  "client": "client",
+  "created": 1698397974245,
+  "comment": "comment comment",
+  "order_items": [
+    {
+      "id": 1,
+      "name": "Food",
+      "price": 20000,
+      "quantity": 2
+    }
+  ]
+}

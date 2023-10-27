@@ -1,0 +1,59 @@
+::ng-deep .mat-dialog-container{
+  padding: 62px 24px;
+  position: relative;
+  overflow: visible;
+}
+
+::ng-deep .cdk-overlay-pane{
+  max-width: 680px !important;
+  width: 100% !important;
+  margin: 0 20px;
+}
+
+.add{
+  background-color: #F46F49;
+  border-radius: 10px;
+  width: 100%;
+  padding: 15px 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.header{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #010F07;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.4px;
+  color: #868686;
+  margin: 24px 0;
+}
+
+.icon{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}

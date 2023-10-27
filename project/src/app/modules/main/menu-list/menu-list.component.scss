@@ -1,0 +1,128 @@
+.mat-tab-group{
+  flex: 1;
+}
+
+::ng-deep .mat-tab-header{
+  border: none;
+}
+
+::ng-deep .mat-tab-labels{
+  gap: 16px;
+}
+
+::ng-deep .mat-tab-label{
+  padding: 10px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #252A2D;
+  background: #FFFFFF;
+  border-radius: 10px;
+  height: unset;
+  min-height: unset;
+  width: unset;
+  min-width: unset;
+  opacity: 1;
+}
+
+::ng-deep .mat-tab-label-active{
+  background: #F5BD27;
+  color: #FFFFFF;
+}
+
+::ng-deep .mat-ink-bar{
+  display: none;
+}
+
+.item{
+  display: flex;
+  padding: 24px 0;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.left{
+  margin-right: 24px;
+
+  .item_img{
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px 120px;
+  }
+}
+
+.right{
+  flex: 1;
+}
+
+.item-title{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #010F07;
+}
+
+.item-description{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: -0.3px;
+  color: #010F07;
+  mix-blend-mode: normal;
+  opacity: 0.64;
+  margin: 6px 0 24px;
+}
+
+.item-footer{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #252A2D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.add_btn{
+  background-color: #F8B64C1A;
+  border-radius: 100%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #F5BD27;
+}
+
+.right-footer{
+  display: flex;
+  gap: 10px;
+
+  button {
+    line-height: 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background: rgba(245, 189, 39, 0.1);
+    border: 1px solid rgba(245, 189, 39, 0.2);
+    color: #F5BD27;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  button:disabled{
+    background: #F8F8F8;
+    border: 1px solid rgba(151, 151, 151, 0.104158);
+    color: #010F07;
+  }
+}

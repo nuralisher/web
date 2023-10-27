@@ -1,0 +1,268 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 0 40px;
+}
+
+.title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 39px;
+  text-align: center;
+  color: #000000;
+}
+
+.search{
+  position: relative;
+
+  input{
+    outline: none;
+    border: 1px solid #D5D5D5;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 15px 49px 15px 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #252A2D;
+    width: 420px;
+  }
+
+  input::placeholder{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #919191;
+  }
+
+  .icon{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.header-right{
+  width: 300px;
+}
+
+.add-btn{
+  background: #F46F49;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+button.primary-btn{
+  border: 1px solid #F46F49;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background-color: white;
+  color: #F46F49;
+  padding: 15px 30px;
+  transition: background-color linear .1s;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  min-width: fit-content;
+}
+
+.tabs{
+  display: flex;
+  gap: 20px;
+  overflow: auto;
+  margin-bottom: 30px;
+}
+
+.tabs::-webkit-scrollbar {
+   display: none;
+ }
+
+.tab {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #252A2D;
+  border: 1px solid #D4D4D4;
+  box-sizing: border-box;
+  border-radius: 44px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: background-color linear .2s;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  min-width: fit-content;
+}
+
+.tab:hover{
+  background-color: #eeeeee;
+}
+
+.active-tab, .active-tab:hover{
+  background: #F5BD27;
+  color: #FFFFFF;
+}
+
+
+
+.content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  border: 1px solid #DEDEDE;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.empty-message{
+  img {
+    position: relative;
+    top: 32px;
+  }
+}
+
+.emtpy-message-title{
+  margin: 0 0 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #252A2D;
+}
+
+.emtpy-btns{
+  width: 300px;
+}
+
+.header-right{
+  width: 300px;
+}
+
+.add-btn{
+  background: #F46F49;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+.remove-btn{
+  border-radius: 100%;
+  transition: background-color linear .2s;
+}
+
+.remove-btn:hover{
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+
+.table.mat-table{
+  padding: 0 40px;
+  border: 1px solid #DEDEDE;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-collapse: collapse;
+  max-width: 1200px;
+
+  th{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #909090;
+  }
+
+  td{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #252A2D;
+  }
+
+  th, td{
+    //width: 100%;
+    padding: 18px 85px 18px 0;
+    text-align: start;
+    border: none;
+    display: block;
+    flex: 1;
+    min-height: fit-content;
+    height: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  th{
+    padding-bottom: 30px;
+  }
+
+  .mat-row{
+    border-top: 1px solid #DEDEDE;
+    transition: background-color linear .2s;
+  }
+
+  .mat-header-row, .mat-row{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    //display: block;
+  }
+
+  .flex-2{
+    flex: 4;
+  }
+}
+
+
+
+.image-btn{
+  cursor: pointer;
+  display: block;
+}
+
+.action-row{
+  display: flex !important;
+  align-items: center;
+  gap: 20px;
+}
+
+
+

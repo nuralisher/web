@@ -1,0 +1,86 @@
+<div class="web-container" style="height: 100%; display: flex; flex-direction: column; padding-top: 30px; padding-bottom: 30px">
+  <div class="header">
+    <div class="header-inner">
+      <img class="back-btn" src="assets/images/chevron-left.svg" alt="<" routerLink="/admin/menu">
+      <div class="title">
+        Добавление блюда
+      </div>
+    </div>
+  </div>
+  <div class="form" [formGroup]="form">
+    <div class="form-inner">
+      <div class="col">
+        <div class="field">
+          <label class="label">Название</label>
+          <input
+            matInput
+            type="text"
+            inputmode="text"
+            formControlName="name"
+            [autofocus]="false"
+            placeholder="Введите название"
+          >
+          <mat-error style="display: block" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Это обязательное поле </mat-error>
+        </div>
+        <div class="field">
+          <label class="label">Категория</label>
+          <mat-select
+            formControlName="category"
+            placeholder="Выбрать"
+          >
+            <mat-option *ngFor="let category of categories" [value]="category.id">
+              {{category.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error style="display: block" *ngIf="form.get('category')?.invalid && form.get('category')?.touched">Это обязательное поле </mat-error>
+        </div>
+        <div class="field">
+          <label class="label">Цена (₸)</label>
+          <input
+            matInput
+            type="number"
+            inputmode="numeric"
+            formControlName="price"
+            [autofocus]="false"
+            placeholder="Введите цену"
+          >
+          <mat-error style="display: block" *ngIf="form.get('price')?.invalid && form.get('price')?.touched">Это обязательное поле </mat-error>
+        </div>
+      </div>
+      <div class="col">
+        <div class="field">
+          <label class="label">Фото</label>
+          <input
+            #fileInput
+            class="custom-file-input"
+            type="file"
+            formControlName="image"
+            [autofocus]="false"
+            placeholder="Введите название"
+            accept=".jpg, .jpeg, .png"
+          >
+          <mat-error style="display: block" *ngIf="form.get('name')?.invalid && form.get('image')?.touched">Это обязательное поле </mat-error>
+        </div>
+        <div class="field" style="flex: 1; display: flex; flex-direction: column">
+          <label class="label">Описание</label>
+          <textarea
+            type="text"
+            formControlName="description"
+            [autofocus]="false"
+            placeholder="Введите описание"
+            resize="false"
+          ></textarea>
+          <mat-error style="display: block" *ngIf="form.get('description')?.invalid && form.get('description')?.touched">Это обязательное поле </mat-error>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button mat-flat-button class="submit-button" (click)="onSubmit()" [disabled]="loading || form.invalid">
+        Сохранить
+      </button>
+      <button mat-flat-button class="cancel-button">
+        Отмена
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="web-container wb-con">
+  <div class="header">
+    <img src="assets/images/chevron-left-big.svg" alt="<" class="back" routerLink="/admin/orders">
+    <div class="title">
+      Заказы
+    </div>
+  </div>
+  <div class="content" *ngIf="order">
+    <div class="content-header">
+      <div class="item">
+        <div class="key">
+          № стола
+        </div>
+        <div class="value">
+          {{order.table}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="key">
+          Время заказа
+        </div>
+        <div class="value">
+          {{order.created | date: 'dd.mm.yyyy, hh:mm'}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="key">
+          Клиент
+        </div>
+        <div class="value">
+          {{order.client}}
+        </div>
+      </div>
+      <div class="item">
+        <div class="key">
+          Счет
+        </div>
+        <div class="value">
+          {{getTotalPrice().toLocaleString()}} ₸
+        </div>
+      </div>
+    </div>
+    <div class="content-body">
+      <div class="title">
+        Блюда
+      </div>
+      <div class="list">
+        <div class="list_item" *ngFor="let item of order.order_items">
+          <div class="list_item_title">
+            {{item.name}}
+          </div>
+          <div class="list_item_description">
+            x {{item.quantity}}
+          </div>
+          <div class="list_item_status">
+            {{item.price.toLocaleString()}} ₸
+          </div>
+        </div>
+      </div>
+      <div class="comment" *ngIf="order.comment">
+        <div class="title">
+          Комментарий
+        </div>
+        <div class="value">
+          {{order.comment}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

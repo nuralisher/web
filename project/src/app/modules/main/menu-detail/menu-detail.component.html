@@ -1,0 +1,53 @@
+<div class="wv-container content-wrapper">
+  <div class="header">
+    <img [src]="menu.image" alt="">
+  </div>
+  <div class="main">
+    <div class="title">
+      {{menu.name}}
+    </div>
+    <div class="description">
+      {{menu.description}}
+    </div>
+    <div class="price">
+      {{menu.price.toLocaleString()}} ₸
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-title">
+      Есть комментарии?
+    </div>
+    <div class="footer-description">
+      Напишите ингредиенты, которые хотите убрать
+    </div>
+    <textarea
+      class="comment_field"
+      rows="1"
+      placeholder="Напишите комментарий"
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="4"
+      cdkAutosizeMaxRows="10"
+    ></textarea>
+  </div>
+  <button class="back" routerLink="/menu">
+    <img src="assets/images/chevron-left.svg" alt="<">
+  </button>
+</div>
+
+<div class="wrapper">
+  <div class="btns">
+    <div class="count">
+      <div class="count-inner">
+        <button class="decrement" [disabled]="quantity === 1" (click)="changeQuantity(-1)">-</button>
+        <div class="value">{{quantity}}</div>
+        <button class="increment" [disabled]="quantity >= 20" (click)="changeQuantity(1)">+</button>
+      </div>
+    </div>
+    <button class="add" *ngIf="addOrRemove" (click)="addOrderItem()">
+      Добавить к заказу ({{(menu.price * quantity).toLocaleString()}} ₸)
+    </button>
+    <button class="remove" *ngIf="!addOrRemove" (click)="removeOrderItem()">
+      Убрать <span *ngIf="quantity > 1">все</span> ({{(menu.price * quantity).toLocaleString()}} ₸)
+    </button>
+  </div>
+</div>

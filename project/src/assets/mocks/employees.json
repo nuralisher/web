@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "full_name": "Alisher Nurzhanuly",
+    "email": "email@gmail.com",
+    "user_id": 1,
+    "position": "WAITER"
+  },
+  {
+    "id": 2,
+    "full_name": "Dauren Abdikadyr",
+    "email": "email@gmail.com",
+    "user_id": 1,
+    "position": "OWNER"
+  },
+  {
+    "id": 3,
+    "full_name": "Assem Nurzhankyzy",
+    "email": "email@gmail.com",
+    "user_id": 1,
+    "position": "ADMIN"
+  }
+]

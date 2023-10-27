@@ -1,0 +1,50 @@
+:host{
+  height: 100%;
+}
+
+.wrapper{
+  height: 100%;
+  display: flex;
+}
+
+.sidebar{
+  width: 220px;
+  background-color: #FBFBFB;
+  height: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  //gap: 20px;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  padding: 15px 40px 15px 40px;
+  cursor: pointer;
+  transition: background-color linear .2s;
+}
+
+.nav:hover{
+  background-color: #eeeeee;
+}
+
+.active-nav{
+  color: #F46F49;
+}
+
+.content {
+  flex: 1;
+}
+
+.display_none {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    display: none;
+  }
+}

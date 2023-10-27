@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="title">
+    Добавление ресторана
+  </div>
+  <form class="form" [formGroup]="form" >
+    <div class="field">
+      <label class="label">Название</label>
+      <input
+        matInput
+        type="text"
+        inputmode="text"
+        formControlName="name"
+        [autofocus]="false"
+        placeholder="Введите название"
+      >
+      <mat-error style="display: block" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Это обязательное поле </mat-error>
+    </div>
+    <div class="btns">
+      <button mat-flat-button mat-dialog-close class="cancel-button" type="reset">
+        Отмена
+      </button>
+      <button [disabled]="loading || form.invalid" mat-flat-button class="submit-button" type="submit" (click)="onSubmit()">
+        Добавить
+      </button>
+    </div>
+  </form>
+</div>
+<mat-icon mat-dialog-close class="close-btn">close</mat-icon>

@@ -1,0 +1,154 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 0 40px;
+}
+
+.title{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 39px;
+  text-align: center;
+  color: #000000;
+}
+
+.search{
+  position: relative;
+
+  input{
+    outline: none;
+    border: 1px solid #D5D5D5;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 15px 49px 15px 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #252A2D;
+    width: 420px;
+  }
+
+  input::placeholder{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #919191;
+  }
+
+  .icon{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+
+.content{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.empty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  border: 1px solid #DEDEDE;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.emtpy-message-title{
+  margin: 20px 0 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #252A2D;
+}
+
+.emtpy-btns{
+  width: 300px;
+}
+
+.header-right{
+  width: 300px;
+}
+
+.add-btn{
+  background: #F46F49;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 15px;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+
+.table.mat-table{
+  padding: 0 40px;
+  border: 1px solid #DEDEDE;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-collapse: collapse;
+
+  th{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #909090;
+  }
+
+  td{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #252A2D;
+  }
+
+  th, td{
+    min-width: 330px !important;
+    width: 100%;
+    padding: 14px 14px 14px 0;
+    text-align: start;
+    border: none;
+  }
+
+  .mat-row{
+    border-top: 1px solid #DEDEDE;
+    width: 100%;
+    transition: background-color linear .2s;
+  }
+}
+
+
+.image-btn{
+  cursor: pointer;
+  display: block;
+}
+
+.action-row{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

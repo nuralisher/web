@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <form class="form" [formGroup]="form" (submit)="submit()">
+    <div class="form_inner">
+      <div class="title">
+        Авторизация
+      </div>
+      <div class="field">
+        <label class="label">Имя пользователя</label>
+        <input
+          matInput
+          type="email"
+          inputmode="email"
+          formControlName="username"
+          placeholder="Введите имя пользователя"
+        >
+      </div>
+      <div class="field">
+        <label class="label">Пароль</label>
+        <input
+          matInput
+          type="password"
+          formControlName="password"
+          placeholder="Введите пароль"
+        >
+      </div>
+      <div class="inner_footer">
+        <span routerLink="/auth/sign-up">Регистрация</span>
+      </div>
+      <mat-error class="form-error" *ngIf="error">
+        Не удалось зарегистрироваться ({{error}})
+      </mat-error>
+    </div>
+    <button [disabled]="isLoading" type="submit" mat-flat-button class="submit-button">
+      Войти
+    </button>
+  </form>
+</div>

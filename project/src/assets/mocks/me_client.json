@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "is_client": true,
+  "user": {
+    "id": 1,
+    "username": "Alisher",
+    "first_name": "Alisher",
+    "last_name": "Nurzhanuly",
+    "email": "alisher110301@gmail.com"
+  }
+}

@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="title">
+    Добавление сотрудника
+  </div>
+  <div class="header">
+    <div class="search">
+      <div class="icon">
+        <img src="../../../../../assets/images/search_gray.svg" alt="" width="24" height="24">
+      </div>
+      <input placeholder="Поиск" type="text" matInput autocomplete="off" (input)="onSearch($event)">
+    </div>
+  </div>
+  <div class="content">
+    <div *ngIf="employees.length === 0">
+      Ничего не найдено
+    </div>
+    <div class="item"
+         *ngFor="let employee of employees"
+         (click)="selectEmployee(employee)"
+         [class.selected_item]="employee.id===selectedEmployee.id">
+      <div class="item-title">
+        {{employee.full_name}}
+      </div>
+      <div class="item-status">
+        {{employee.email}}
+      </div>
+    </div>
+  </div>
+  <div class="btns">
+    <mat-form-field>
+      <mat-select placeholder="Выберите должность" [(ngModel)]="position">
+        <mat-option *ngFor="let position of positions" [value]="position">
+          {{ positionRU[position] }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button [disabled]="loading || !selectedEmployee.id || !
+    position" mat-flat-button class="submit-button" type="submit" (click)="onSubmit()">
+      Добавить
+    </button>
+  </div>
+</div>
+<mat-icon mat-dialog-close class="close-btn">close</mat-icon>

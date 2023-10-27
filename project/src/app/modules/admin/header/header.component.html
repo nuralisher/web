@@ -1,0 +1,33 @@
+<div class="header">
+  <div class="left">
+    <div class="title">MojnoMenu</div>
+    <div class="restaurant" *ngIf="this.adminService.selectedRestaurant?.name" (click)="showDropdown = !showDropdown; showLogoutDropdown=false; $event.stopPropagation()">
+      <div class="restaurant-title">
+        {{this.adminService.selectedRestaurant?.name}}
+      </div>
+      <img src="assets/images/chevron-down.svg" alt="">
+      <ng-template [ngIf]="showDropdown">
+        <div class="dropdown">
+          <div class="nav" routerLink="/admin/restaurants">
+            <img src="assets/images/logout.svg" alt="">
+            <div class="nav-title">Выйти из ресторана</div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="right">
+    <div class="user" (click)="showLogoutDropdown = !showLogoutDropdown; showDropdown=false; $event.stopPropagation()">
+      <img *ngIf="authService.user.id" src="assets/images/user.svg" alt="i">
+      <img *ngIf="!authService.user.id" [routerLink]="['/auth/sign-in', {redirect: 'admin/restaurants'}]" src="assets/images/login.svg" alt="i">
+      <ng-template [ngIf]="showLogoutDropdown">
+        <div class="dropdown logout">
+          <div class="nav" (click)="logout()">
+            <img src="assets/images/logout.svg" alt="">
+            <div class="nav-title">Выйти</div>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

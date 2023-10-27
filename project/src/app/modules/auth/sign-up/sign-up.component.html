@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <form class="form" [formGroup]="form" (submit)="onSubmit()">
+    <div class="form_inner">
+      <div class="title">
+        Регистрация
+      </div>
+      <div class="field">
+        <label class="label">Имя пользователя</label>
+        <input
+          matInput
+          type="text"
+          formControlName="username"
+          placeholder="Введите имя пользователя"
+        >
+      </div>
+      <div class="field">
+        <label class="label">Пароль</label>
+        <input
+          matInput
+          type="password"
+          formControlName="password1"
+          placeholder="Введите пароль"
+        >
+      </div>
+      <div class="field">
+        <label class="label">Повторите пароль</label>
+        <input
+          matInput
+          type="password"
+          formControlName="password2"
+          placeholder="Введите пароль еще раз"
+        >
+      </div>
+      <div class="form-hint">
+        <div>
+          Уже есть аккаунт? <a [routerLink]="['/auth/sign-in', {redirect: 'admin/restaurants'}]">Войти</a>
+        </div>
+        <div>
+          <a [routerLink]="['/auth/admin/sign-up']">Я админ</a>
+        </div>
+      </div>
+    </div>
+    <mat-error class="form-error" *ngIf="error">
+      Не удалось зарегистрироваться ({{error}})
+    </mat-error>
+    <div class="btns">
+      <button mat-flat-button class="submit-button" [disabled]="loading">
+        Продолжить
+      </button>
+    </div>
+  </form>
+</div>
