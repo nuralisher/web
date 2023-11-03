@@ -1,0 +1,36 @@
+
+<div>
+  <button (click)="delete()"> delete </button>
+</div>
+<div>
+  <button (click)="edit()"> edit </button>
+  <button (click)="save()"> save </button>
+</div>
+
+<div *ngIf="!editMode">
+  <div>
+    {{ post.title }} {{ post.id }}
+  </div>
+  <div>
+    {{ post.body }}
+  </div>
+  <div>
+    Likes: {{ post.like }}
+    <button (click)="like()"> {{ post.liked ? 'Unlike' : 'Like' }} </button>
+  </div>
+  <div>
+    <button (click)="dislike()">
+      {{ post.disliked ? 'Remove Dislike' : 'Dislike' }}
+    </button>
+    Dislike: {{ post.dislike }}
+  </div>
+  <div>
+    created: {{ post.created | date }}
+  </div>
+</div>
+<div *ngIf="editMode">
+  <input [formControl]="title" type="text" placeholder="Post Title">
+  <br/>
+  <textarea [formControl]="body" type="text" placeholder="Post Body"></textarea>
+  <br/>
+</div>

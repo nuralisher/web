@@ -21,7 +21,7 @@ export class ScanPageComponent implements OnInit, AfterViewChecked {
   ) { }
 
   ngOnInit(): void {
-    setTimeout(() => this.onScan('5e38e9d6-4062-45ec-95cb-d262039b595c'), 1000);
+    setTimeout(() => this.onScan('5e38e9d6-4062-45ec-95cb-d262039b595c'), 4000);
   }
 
   ngAfterViewChecked() {

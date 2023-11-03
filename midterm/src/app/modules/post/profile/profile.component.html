@@ -1,0 +1,32 @@
+<div *ngIf="editMode">
+  <button (click)="save()"> save </button>
+
+  <div>
+    Name:
+    <input type="text" [formControl]="name">
+  </div>
+  <div>
+    surname:
+    <input type="text" [formControl]="surname">
+  </div>
+  <div>
+    email:
+    <input type="enail" [formControl]="email">
+  </div>
+</div>
+
+<div *ngIf="!editMode">
+  <button (click)="edit()"> edit </button>
+
+  <div>
+    Name: {{ postService.profile.name }}
+  </div>
+
+  <div>
+    surname: {{ postService.profile.surname }}
+  </div>
+
+  <div>
+    email: {{ postService.profile.email }}
+  </div>
+</div>

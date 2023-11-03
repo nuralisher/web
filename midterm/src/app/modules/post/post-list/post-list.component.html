@@ -1,0 +1,28 @@
+<div class="header">
+  <button (click)="addPost()"> +Add post </button>
+  <h1 (click)="toProfile()" style="cursor: pointer">Profile ( {{ postService.profile.name }} )</h1>
+</div>
+
+<div>
+  <div *ngFor="let post of postService.posts" (click)="navToPostItem(post.id)" class="post">
+    <div>
+      {{ post.title }} {{ post.id }}
+    </div>
+    <div>
+      {{ post.body }}
+    </div>
+    <div>
+      Likes: {{ post.like }}
+      <button (click)="like(post.id); $event.stopPropagation()"> {{ post.liked ? 'Unlike' : 'Like' }} </button>
+    </div>
+    <div>
+      <button (click)="dislike(post.id); $event.stopPropagation()">
+        {{ post.disliked ? 'Remove Dislike' : 'Dislike' }}
+      </button>
+      Dislike: {{ post.dislike }}
+    </div>
+    <div>
+      created: {{ post.created | date }}
+    </div>
+  </div>
+</div>
