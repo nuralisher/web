@@ -5,6 +5,7 @@ h1:hover {
 
 h1 {
   margin: 0;
+  transition: all linear .2s;
 }
 
 .header {
@@ -18,4 +19,10 @@ h1 {
   background: aliceblue; margin-bottom: 20px;
   padding: 10px;
   border-radius: 10px;
+  transition: background linear .2s;
+  cursor: pointer;
+}
+
+.post:hover {
+  background: #e3f2ff;
 }

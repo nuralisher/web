@@ -3,6 +3,12 @@
   <h1 (click)="toProfile()" style="cursor: pointer">Profile ( {{ postService.profile.name }} )</h1>
 </div>
 
+<p>
+  Click posts to navigate
+  <br/>
+  You can delete, edit posts
+</p>
+
 <div>
   <div *ngFor="let post of postService.posts" (click)="navToPostItem(post.id)" class="post">
     <div>
